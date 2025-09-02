@@ -3,7 +3,10 @@ name: CI - Build & Test
 on:
   push:
     branches:
-      - develop   # develop 브랜치에 push 될 때만 실행
+      - develop
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
@@ -22,6 +25,8 @@ jobs:
 
       - name: Build with Gradle
         run: ./gradlew clean build --no-daemon
+        env:
+          SPRING_PROFILES_ACTIVE: test
 
   test:
     runs-on: ubuntu-latest
