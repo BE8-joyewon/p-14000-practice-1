@@ -20,4 +20,4 @@ primary_region = 'nrt'
   cpus = 1
 
 [build]
-builder = "Dockerfile"
+dockerfile = "Dockerfile"
