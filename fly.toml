@@ -21,3 +21,6 @@ primary_region = 'nrt'
 
 [build]
 builder = "paketobuildpacks/builder:base"
+
+[env]
+BP_JVM_VERSION = "21"
