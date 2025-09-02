@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: ${DATABASE_URL}  # Fly.io Postgres URL (Secrets로 주입)
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate  # 운영 안전 모드 (스키마 검증). 개발 단계라면 update도 가능
+
+  data:
+    redis:
+      url: ${REDIS_URL}  # Upstash Redis URL (Secrets로 주입)
+
+openweather:
+  api:
+    key: ${OPENWEATHER_API_KEY}
+
+logging:
+  level:
+    root: WARN  # 운영은 성능 고려해 최소 로그만
+    com.team04.back: INFO

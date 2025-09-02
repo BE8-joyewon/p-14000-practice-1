@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: backend
+
+  profiles:
+    active: dev   # 기본 실행 환경 (로컬). 배포 시 SPRING_PROFILES_ACTIVE=prod 로 override
+
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+        default_batch_fetch_size: 100  # N+1 문제 완화
+
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}  # 기본은 로컬
+      port: ${REDIS_PORT:6379}
+
+  config:
+    import: optional:classpath:application-secret.yml
+    # 팀 내부에서만 쓰는 민감값은 따로 관리 (예: API Key)
+
+server:
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
