@@ -6,7 +6,7 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: validate  # 운영 안전 모드 (스키마 검증). 개발 단계라면 update도 가능
+      ddl-auto: update
 
   data:
     redis:
