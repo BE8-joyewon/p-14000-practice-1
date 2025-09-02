@@ -20,3 +20,7 @@ logging:
   level:
     root: WARN  # 운영은 성능 고려해 최소 로그만
     com.team04.back: INFO
+
+server:
+  port: 8080
+  address: 0.0.0.0
