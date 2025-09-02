@@ -96,8 +96,3 @@ tasks.named("bootRun") {
 	dependsOn("composeUp")
 	finalizedBy("composeDown")
 }
-
-tasks.withType<Test> {
-	useJUnitPlatform()
-	systemProperty("spring.profiles.active", "test")
-}
