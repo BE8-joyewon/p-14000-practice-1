@@ -20,8 +20,4 @@ primary_region = 'nrt'
   cpus = 1
 
 [build]
-builder = "paketobuildpacks/builder:base"
-
-
-[env]
-BP_JVM_VERSION = "21"
+builder = "Dockerfile"
